@@ -833,7 +833,7 @@ function showToast() {
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxrFrKagfgJhoqZie7R2Tvxxfc4y_Qx6wMZfN64rWGUnLSEEVfaT3EOZi9gmyauYX_g/exec';
 
 async function sendToSheet(data) {
-  if (!SHEET_URL || SHEET_URL === 'https://script.google.com/macros/s/AKfycbxrFrKagfgJhoqZie7R2Tvxxfc4y_Qx6wMZfN64rWGUnLSEEVfaT3EOZi9gmyauYX_g/exec') {
+  if (!SHEET_URL) {
     console.warn('Google Sheets URL not configured. Data:', data);
     return;
   }
