@@ -264,10 +264,19 @@ body.lpt [lang="pt"]{display:initial;}
   .rcard{flex:0 0 calc(100% - .5rem);}
 }
 @media(max-width:640px){
+  /* Regras que você já tinha */
   .sgrid{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
   .footer-in{grid-template-columns:1fr;}
   .hero-stats{flex-direction:column;gap:0;}
+  
+  /* NOVAS REGRAS: CABEÇALHO E TOPO NO CELULAR */
+  .langbar { padding: 10px 1rem; flex-direction: column; gap: 8px; text-align: center; }
+  .hinner { padding: 0 1rem; gap: 10px; } 
+  .logo-name { font-size: 17px; } 
+  .logo-sub { font-size: 9px; }
+  .btn-call { display: none; } /* Esconde o botão de ligar apenas no celular para liberar espaço */
+  .btn-cta { padding: 8px 14px; font-size: 12px; } 
 }
 </style>
 </head>
