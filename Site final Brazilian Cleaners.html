@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazilian Cleaners — Cleaning Services in Santa Rosa Beach, FL</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:#1B4FA8; --bd:#0f2d6b; --bm:#2a63c9; --bl:#dce8ff; --bxl:#f0f5ff;
+  --green:#1A6B2A; --gl:#e8f5ec; --gd:#0f4019;
+  --gold:#F5C518; --gol:#fffbea; --god:#c49a0a;
+  --warm:#FDF6EC; --warm2:#FAF0DC; --warm3:#F5E6C8;
+  --terra:#C2622B; --terra-l:#FAEEE6;
+  --white:#fff; --off:#fdfaf6; --bdr:#e6dfd4;
+  --gray:#6b7280; --dark:#1a120a; --text:#2d2010;
+  --r:14px; --rs:8px;
+  --shadow: 0 2px 16px rgba(44,32,0,.08);
+  --shadow-lg: 0 8px 40px rgba(44,32,0,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;color:var(--text);background:var(--off);overflow-x:hidden;line-height:1.6;}
+h1,h2,h3,h4{font-family:'Lora',serif;line-height:1.2;}
+a{text-decoration:none;}
+
+/* ── LANG BAR ── */
+.langbar{background:var(--bd);padding:8px 2rem;display:flex;justify-content:space-between;align-items:center;}
+.langbar-l{font-size:11.5px;color:rgba(255,255,255,.5);letter-spacing:.04em;}
+.langbar-l strong{color:rgba(255,255,255,.85);}
+.lbs{display:flex;gap:6px;}
+.lb{background:none;border:1px solid rgba(255,255,255,.25);color:#fff;font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;padding:3px 14px;border-radius:20px;cursor:pointer;transition:.2s;letter-spacing:.06em;}
+.lb.on{background:var(--gold);border-color:var(--gold);color:var(--dark);}
+.lb:hover:not(.on){background:rgba(255,255,255,.1);}
+
+/* ── HEADER ── */
+header{background:var(--white);border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:200;box-shadow:0 2px 20px rgba(44,32,0,.08);}
+.hinner{max-width:1180px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-name{font-family:'Lora',serif;font-size:20px;font-weight:700;color:var(--blue);display:block;line-height:1.15;}
+.logo-sub{font-size:11px;color:var(--green);font-weight:600;letter-spacing:.05em;text-transform:uppercase;}
+nav{display:flex;gap:2rem;align-items:center;}
+nav a{font-size:14px;font-weight:600;color:var(--text);transition:color .2s;position:relative;padding-bottom:2px;}
+nav a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:.25s;border-radius:1px;}
+nav a:hover{color:var(--blue);}
+nav a:hover::after{transform:scaleX(1);}
+.hright{display:flex;align-items:center;gap:.75rem;}
+.btn-call{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--blue);border:2px solid var(--blue);padding:8px 16px;border-radius:8px;transition:.2s;}
+.btn-call:hover{background:var(--blue);color:#fff;}
+.btn-cta{background:var(--gold);color:var(--dark);font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;transition:.2s;border:2px solid var(--gold);}
+.btn-cta:hover{background:var(--blue);border-color:var(--blue);color:#fff;}
+
+/* ── HERO ── */
+.hero{background:var(--bd);min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;}
+.hero-texture{position:absolute;inset:0;opacity:.06;background-image:radial-gradient(circle at 1px 1px, #fff 1px, transparent 0);background-size:24px 24px;}
+.hero-warm{position:absolute;bottom:0;left:0;right:0;}
+.hero-in{max-width:1180px;margin:0 auto;padding:6rem 2rem 10rem;display:grid;grid-template-columns:1fr 440px;gap:5rem;align-items:center;position:relative;z-index:1;width:100%;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.4);color:var(--gold);font-size:11.5px;font-weight:700;padding:5px 16px;border-radius:20px;margin-bottom:1.5rem;letter-spacing:.07em;text-transform:uppercase;}
+.hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:700;color:#fff;margin-bottom:1.25rem;letter-spacing:-.01em;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-lead{font-size:17px;color:rgba(255,255,255,.78);line-height:1.8;margin-bottom:2rem;font-weight:300;max-width:480px;}
+.hero-founders{display:flex;align-items:center;gap:12px;margin-bottom:2.25rem;padding:1rem 1.25rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);}
+.f-avs{display:flex;}
+.f-av{width:44px;height:44px;border-radius:50%;border:2.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;margin-left:-10px;flex-shrink:0;}
+.f-av:first-child{margin-left:0;background:var(--blue);}
+.f-av:last-child{background:var(--green);}
+.f-txt{font-size:13.5px;color:rgba(255,255,255,.8);}
+.f-txt strong{color:#fff;display:block;margin-bottom:1px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:2.5rem;}
+.btn-hp{background:var(--gold);color:var(--dark);font-family:'Nunito',sans-serif;font-size:15px;font-weight:700;padding:14px 28px;border-radius:10px;transition:.25s;display:inline-flex;align-items:center;gap:8px;border:2px solid var(--gold);}
+.btn-hp:hover{background:var(--white);border-color:var(--white);transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+.btn-hs{background:transparent;border:2px solid rgba(255,255,255,.35);color:#fff;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;padding:14px 28px;border-radius:10px;transition:.25s;display:inline-flex;align-items:center;gap:8px;}
+.btn-hs:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);}
+.hero-stats{display:flex;gap:0;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);overflow:hidden;}
+.hstat{flex:1;padding:1rem;text-align:center;border-right:1px solid rgba(255,255,255,.1);}
+.hstat:last-child{border-right:none;}
+.hstat-n{font-family:'Lora',serif;font-size:1.9rem;font-weight:700;color:#fff;}
+.hstat-l{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+
+/* Quick Form Card */
+.qcard{background:var(--white);border-radius:var(--r);padding:2.25rem;box-shadow:0 32px 80px rgba(0,0,0,.3);}
+.qcard h3{font-family:'Lora',serif;font-size:1.4rem;color:var(--blue);margin-bottom:.25rem;}
+.qcard-free{font-size:12.5px;color:var(--green);font-weight:700;margin-bottom:1.5rem;display:flex;align-items:center;gap:5px;}
+.fg{margin-bottom:.9rem;}
+.fg label{display:block;font-size:11px;font-weight:700;color:var(--gray);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:8px;font-family:'Nunito',sans-serif;font-size:13.5px;color:var(--text);background:var(--off);transition:border-color .2s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--blue);background:#fff;}
+.fg textarea{resize:vertical;min-height:70px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.btn-sub{width:100%;background:var(--blue);color:#fff;border:none;font-family:'Nunito',sans-serif;font-size:15px;font-weight:700;padding:13px;border-radius:10px;cursor:pointer;margin-top:.5rem;transition:.2s;letter-spacing:.02em;}
+.btn-sub:hover{background:var(--bd);transform:translateY(-1px);}
+.qcard-disclaimer{text-align:center;font-size:11px;color:var(--gray);margin-top:.75rem;line-height:1.5;}
+
+/* ── TRUST BAR ── */
+.trust{background:var(--warm2);border-bottom:1px solid var(--warm3);padding:1.1rem 2rem;}
+.trust-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;}
+.ti{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#6b5c3a;}
+.ti-leaf{width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0;}
+
+/* ── GENERIC SECTION ── */
+section{padding:6rem 2rem;}
+.sin{max-width:1180px;margin:0 auto;}
+.sh{text-align:center;margin-bottom:4rem;}
+.stag{display:inline-block;background:var(--gl);color:var(--gd);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem;}
+.sh h2{font-size:clamp(2rem,4vw,2.9rem);color:var(--blue);font-weight:700;}
+.sh p{font-size:16px;color:var(--gray);margin-top:.85rem;font-weight:400;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.75;}
+
+/* ── SERVICES ── */
+.services-sec{background:var(--off);}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.scard{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--r);padding:2.25rem;transition:.3s;position:relative;overflow:hidden;cursor:default;}
+.scard-accent{position:absolute;top:0;left:0;right:0;height:4px;border-radius:var(--r) var(--r) 0 0;}
+.scard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--bl);}
+.scard-icon{font-size:2.4rem;margin-bottom:1.1rem;display:block;}
+.scard h3{font-size:1.2rem;color:var(--blue);margin-bottom:.75rem;font-weight:700;}
+.scard p{font-size:14px;color:var(--gray);line-height:1.75;margin-bottom:1.25rem;}
+.scard ul{list-style:none;margin-bottom:1.25rem;}
+.scard ul li{font-size:13px;color:var(--gray);padding:3px 0;display:flex;align-items:flex-start;gap:7px;line-height:1.5;}
+.scard ul li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px;}
+.scard-cta{font-size:13px;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:5px;transition:gap .2s;}
+.scard-cta:hover{gap:9px;}
+
+/* ── WHY US ── */
+.why-sec{background:linear-gradient(160deg, var(--bd) 0%, var(--blue) 100%);}
+.why-stag{display:inline-block;background:rgba(245,197,24,.15);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem;}
+.why-sec .sh h2{color:#fff;}
+.why-sec .sh p{color:rgba(255,255,255,.7);}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.wcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:2rem 1.75rem;transition:.3s;}
+.wcard:hover{background:rgba(255,255,255,.12);transform:translateY(-3px);}
+.wcard-icon{font-size:2.2rem;margin-bottom:1rem;display:block;}
+.wcard h4{font-size:1.05rem;font-weight:700;color:var(--gold);margin-bottom:.6rem;font-family:'Lora',serif;}
+.wcard p{font-size:13.5px;color:rgba(255,255,255,.68);line-height:1.7;}
+
+/* ── ABOUT ── */
+.about-sec{background:var(--warm);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.about-visual{position:relative;}
+.about-bg-card{background:linear-gradient(135deg,var(--bxl),var(--gl));border-radius:var(--r);padding:3rem 2rem;text-align:center;}
+.about-emblem{display:inline-flex;flex-direction:column;align-items:center;gap:.5rem;background:var(--white);border-radius:var(--r);padding:1.5rem 2.5rem;box-shadow:var(--shadow-lg);margin-bottom:2rem;}
+.about-flag{font-size:3rem;}
+.about-name{font-family:'Lora',serif;font-size:1.1rem;font-weight:700;color:var(--blue);}
+.about-est{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:.06em;}
+.founder-row{display:flex;gap:1rem;justify-content:center;}
+.fcard{background:var(--white);border-radius:var(--rs);padding:1.1rem 1.5rem;text-align:center;flex:1;box-shadow:var(--shadow);}
+.fcard-av{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#fff;margin:0 auto .85rem;}
+.fcard-name{font-size:14px;font-weight:700;color:var(--text);}
+.fcard-role{font-size:12px;color:var(--gray);}
+.about-copy .stag-local{display:inline-block;background:var(--gl);color:var(--gd);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem;}
+.about-copy h2{font-size:2.3rem;color:var(--blue);margin-bottom:1.25rem;font-weight:700;}
+.about-copy p{font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:1.1rem;}
+.diffs{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-top:1.75rem;}
+.diff{display:flex;align-items:flex-start;gap:12px;padding:1rem 1.1rem;background:var(--white);border:1px solid var(--bdr);border-radius:var(--rs);transition:.2s;}
+.diff:hover{border-color:var(--bl);box-shadow:var(--shadow);}
+.diff-ic{font-size:1.4rem;flex-shrink:0;margin-top:1px;}
+.diff h5{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}
+.diff p{font-size:12px;color:var(--gray);line-height:1.5;}
+
+/* ── PROCESS ── */
+.process-sec{background:var(--off);}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.process-steps::before{content:'';position:absolute;top:36px;left:12.5%;right:12.5%;height:2px;background:var(--warm3);z-index:0;}
+.pstep{text-align:center;position:relative;z-index:1;padding:0 1rem;}
+.pstep-num{width:72px;height:72px;border-radius:50%;background:var(--white);border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:1.6rem;font-weight:700;color:var(--blue);margin:0 auto 1.25rem;box-shadow:var(--shadow);}
+.pstep h4{font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:.5rem;font-family:'Lora',serif;}
+.pstep p{font-size:13px;color:var(--gray);line-height:1.65;}
+
+/* ── AREA ── */
+.area-bar{background:var(--gol);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:2.75rem 2rem;}
+.area-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.area-txt h3{font-family:'Lora',serif;font-size:1.5rem;color:var(--blue);margin-bottom:.4rem;}
+.area-txt p{font-size:14px;color:var(--gray);}
+.atags{display:flex;flex-wrap:wrap;gap:8px;}
+.atag{background:var(--white);border:1.5px solid var(--bdr);border-radius:20px;padding:6px 16px;font-size:13px;font-weight:600;color:var(--blue);}
+
+/* ── REVIEWS ── */
+.reviews-sec{background:var(--warm);}
+.rcarousel{overflow:hidden;}
+.rtrack{display:flex;gap:1.25rem;transition:transform .55s cubic-bezier(.4,0,.2,1);}
+.rcard{background:var(--white);border:1px solid var(--bdr);border-radius:var(--r);padding:2rem;flex:0 0 calc(33.333% - .85rem);min-width:0;box-shadow:var(--shadow);}
+.rcard-stars{color:var(--gold);font-size:16px;letter-spacing:3px;margin-bottom:.85rem;}
+.rcard-txt{font-size:14px;color:var(--text);line-height:1.8;margin-bottom:1.25rem;font-style:italic;font-family:'Lora',serif;}
+.rcard-name{font-size:13.5px;font-weight:700;color:var(--text);}
+.rcard-loc{font-size:12px;color:var(--gray);margin-top:2px;}
+.rcontrols{display:flex;justify-content:center;align-items:center;gap:1rem;margin-top:2rem;}
+.rbtn{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--bdr);background:var(--white);cursor:pointer;font-size:18px;transition:.2s;display:flex;align-items:center;justify-content:center;color:var(--blue);}
+.rbtn:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.rdots{display:flex;gap:7px;}
+.rdot{width:8px;height:8px;border-radius:50%;background:var(--bdr);cursor:pointer;transition:.3s;}
+.rdot.on{background:var(--blue);width:22px;border-radius:4px;}
+.g-badge{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:2.5rem;padding:1.25rem 2rem;background:var(--white);border:1px solid var(--bdr);border-radius:var(--r);max-width:380px;margin-left:auto;margin-right:auto;box-shadow:var(--shadow);}
+.g-logo{font-size:1.5rem;font-weight:700;font-family:serif;letter-spacing:-1px;}
+.g-logo span:nth-child(1){color:#4285F4;}
+.g-logo span:nth-child(2){color:#EA4335;}
+.g-logo span:nth-child(3){color:#FBBC05;}
+.g-logo span:nth-child(4){color:#4285F4;}
+.g-logo span:nth-child(5){color:#34A853;}
+.g-logo span:nth-child(6){color:#EA4335;}
+.g-right .gs{color:var(--gold);font-size:20px;}
+.g-right .gn{font-family:'Lora',serif;font-size:2rem;font-weight:700;color:var(--text);}
+.g-right .gl{font-size:12px;color:var(--gray);}
+
+/* ── CONTACT / FORM ── */
+.contact-sec{background:var(--off);}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.cinfo-tag{display:inline-block;background:var(--gl);color:var(--gd);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem;}
+.cinfo h2{font-size:2.2rem;color:var(--blue);margin-bottom:1rem;font-weight:700;}
+.cinfo>p{font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:1.5rem;}
+.free-box{background:var(--gl);border:1px solid #b6dec0;border-radius:var(--rs);padding:1.1rem 1.25rem;margin-bottom:1.75rem;display:flex;gap:10px;align-items:flex-start;}
+.free-box p{font-size:14px;color:var(--gd);line-height:1.65;font-weight:600;}
+.cways{display:flex;flex-direction:column;gap:.75rem;}
+.cway{display:flex;align-items:center;gap:14px;padding:1rem 1.25rem;background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--rs);transition:.2s;}
+.cway:hover{border-color:var(--blue);box-shadow:var(--shadow);}
+.cway-ic{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.cway-ic.b{background:var(--bxl);}
+.cway-ic.g{background:var(--gl);}
+.cway-ic.r{background:var(--terra-l);}
+.cway-lbl{font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.05em;}
+.cway-val{font-size:14.5px;font-weight:700;color:var(--text);}
+
+/* Main contact form */
+.cform{background:var(--white);border:1.5px solid var(--bdr);border-radius:var(--r);padding:2.5rem;box-shadow:var(--shadow-lg);}
+.cform h3{font-family:'Lora',serif;font-size:1.5rem;color:var(--blue);margin-bottom:.3rem;}
+.cform-sub{font-size:13px;color:var(--gray);margin-bottom:1.75rem;line-height:1.5;}
+.form-success{display:none;text-align:center;padding:3rem 1rem;}
+.form-success-icon{font-size:3.5rem;margin-bottom:1rem;}
+.form-success h3{color:var(--green);font-family:'Lora',serif;font-size:1.5rem;margin-bottom:.75rem;}
+.form-success p{color:var(--gray);font-size:14px;line-height:1.7;}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);color:rgba(255,255,255,.6);padding:4.5rem 2rem 2rem;}
+.footer-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.07);}
+.fb-name{font-family:'Lora',serif;font-size:21px;font-weight:700;color:var(--gold);margin-bottom:4px;}
+.fb-sub{font-size:10.5px;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.06em;margin-bottom:1rem;}
+.fb-desc{font-size:13.5px;line-height:1.75;max-width:250px;font-weight:300;color:rgba(255,255,255,.58);margin-bottom:1.25rem;}
+.fsocial{display:flex;gap:8px;}
+.fsb{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.65);font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:6px;transition:.2s;}
+.fsb:hover{background:rgba(255,255,255,.14);color:#fff;}
+.fcol h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:1rem;}
+.fcol a,.fcol p{display:block;font-size:13px;color:rgba(255,255,255,.52);margin-bottom:.6rem;transition:color .2s;font-weight:400;line-height:1.4;}
+.fcol a:hover{color:var(--white);}
+.footer-bot{max-width:1180px;margin:2rem auto 0;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.28);}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:28px;right:28px;background:var(--green);color:#fff;padding:14px 22px;border-radius:12px;font-size:14px;font-weight:600;opacity:0;transform:translateY(12px);transition:.35s;z-index:1000;max-width:320px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.2);}
+.toast.show{opacity:1;transform:translateY(0);}
+
+/* Lang toggle */
+[lang="pt"]{display:none;}
+body.lpt [lang="en"]{display:none;}
+body.lpt [lang="pt"]{display:initial;}
+
+/* Responsive */
+@media(max-width:1000px){
+  .hero-in{grid-template-columns:1fr;padding-bottom:5rem;}
+  .qcard{display:none;}
+  .sgrid{grid-template-columns:1fr 1fr;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .about-grid,.cgrid{grid-template-columns:1fr;}
+  .footer-in{grid-template-columns:1fr 1fr;}
+  nav{display:none;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:2rem;}
+  .process-steps::before{display:none;}
+  .rcard{flex:0 0 calc(100% - .5rem);}
+}
+@media(max-width:640px){
+  .sgrid{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr;}
+  .footer-in{grid-template-columns:1fr;}
+  .hero-stats{flex-direction:column;gap:0;}
+}
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="langbar">
+  <span class="langbar-l"><strong>Leonardo & Luciana</strong> · Est. 2021 · Santa Rosa Beach, FL</span>
+  <div class="lbs">
+    <button class="lb on" onclick="setLang('en',this)">EN</button>
+    <button class="lb" onclick="setLang('pt',this)">PT</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="hinner">
+    <a href="#" class="logo">
+      <svg width="46" height="54" viewBox="0 0 80 96" fill="none">
+        <path d="M4 8h72v52c0 18-16 30-36 34C20 90 4 78 4 60V8z" fill="#1B4FA8"/>
+        <path d="M42 8h34v28H42V8z" fill="#1A6B2A"/>
+        <path d="M4 42h72v4H4z" fill="#F5C518"/>
+        <path d="M38 8h8v80h-8z" fill="#F5C518"/>
+        <path d="M42 46h34v14c0 10-8 18-34 22V46z" fill="#1B4FA8"/>
+        <path d="M4 46h34v22C16 68 4 58 4 46z" fill="#1A6B2A"/>
+        <text x="10" y="38" font-size="24" font-weight="bold" fill="white" font-family="Georgia,serif">B</text>
+        <text x="47" y="36" font-size="15" fill="white">🧹</text>
+        <text x="10" y="70" font-size="15" fill="white">🧴</text>
+        <text x="47" y="72" font-size="24" font-weight="bold" fill="white" font-family="Georgia,serif">C</text>
+      </svg>
+      <div>
+        <span class="logo-name">Brazilian Cleaners</span>
+        <span class="logo-sub"><span lang="en">Santa Rosa Beach, FL</span><span lang="pt">Santa Rosa Beach, FL</span></span>
+      </div>
+    </a>
+    <nav>
+      <a href="#services"><span lang="en">Services</span><span lang="pt">Serviços</span></a>
+      <a href="#about"><span lang="en">About Us</span><span lang="pt">Sobre Nós</span></a>
+      <a href="#process"><span lang="en">How It Works</span><span lang="pt">Como Funciona</span></a>
+      <a href="#reviews"><span lang="en">Reviews</span><span lang="pt">Avaliações</span></a>
+      <a href="#contact"><span lang="en">Contact</span><span lang="pt">Contato</span></a>
+    </nav>
+    <div class="hright">
+      <a href="tel:+18508220727" class="btn-call">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        (850) 822-0727
+      </a>
+      <a href="#contact" class="btn-cta"><span lang="en">Free Quote Visit</span><span lang="pt">Visita Grátis</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-texture"></div>
+  <div class="hero-in">
+    <div>
+      <div class="hero-tag">⭐ Google 5-Star Rated · Santa Rosa Beach & 30A</div>
+      <h1>
+        <span lang="en">A <em>Spotless</em> Home<br>Starts with <em>Us</em></span>
+        <span lang="pt">Um lar <em>impecável</em><br>começa com <em>a gente</em></span>
+      </h1>
+      <p class="hero-lead">
+        <span lang="en">Brazilian Cleaners brings warmth, precision, and the famous Brazilian <em>capricho</em> to every home, vacation rental, and business across Santa Rosa Beach and the entire 30A Corridor.</span>
+        <span lang="pt">A Brazilian Cleaners traz calor, precisão e o famoso capricho brasileiro para cada casa, imóvel de temporada e empresa em Santa Rosa Beach e no corredor 30A.</span>
+      </p>
+      <div class="hero-founders">
+        <div class="f-avs">
+          <div class="f-av">L</div>
+          <div class="f-av">L</div>
+        </div>
+        <div class="f-txt">
+          <strong><span lang="en">Meet Leonardo & Luciana</span><span lang="pt">Conheça Leonardo & Luciana</span></strong>
+          <span lang="en">Your trusted local cleaning team since 2021</span>
+          <span lang="pt">Sua equipe de limpeza de confiança desde 2021</span>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-hp">📅 <span lang="en">Schedule a Free Visit</span><span lang="pt">Agendar Visita Grátis</span></a>
+        <a href="tel:+18508220727" class="btn-hs">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span lang="en">Call Us</span><span lang="pt">Ligue</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-n">5★</div><div class="hstat-l">Google</div></div>
+        <div class="hstat"><div class="hstat-n">2021</div><div class="hstat-l"><span lang="en">Est.</span><span lang="pt">Fundada</span></div></div>
+        <div class="hstat"><div class="hstat-n">6</div><div class="hstat-l"><span lang="en">Services</span><span lang="pt">Serviços</span></div></div>
+        <div class="hstat"><div class="hstat-n">$0</div><div class="hstat-l"><span lang="en">Quote Visit</span><span lang="pt">Visita Orç.</span></div></div>
+      </div>
+    </div>
+
+    <!-- Hero Quick Form -->
+    <div class="qcard">
+      <h3><span lang="en">Schedule Your Free Visit</span><span lang="pt">Agende sua Visita Grátis</span></h3>
+      <div class="qcard-free">✅ <span lang="en">No cost, no commitment — we come to you</span><span lang="pt">Sem custo, sem compromisso — vamos até você</span></div>
+      <div class="fg">
+        <label><span lang="en">Service needed</span><span lang="pt">Serviço</span></label>
+        <select id="hs"><option value="">Select a service…</option><option>Residential Regular Cleaning</option><option>Deep Cleaning / Faxina</option><option>Commercial Cleaning</option><option>Short-Term Rental / Airbnb Turnover</option><option>Move In / Move Out Cleaning</option><option>Common Area Cleaning</option></select>
+      </div>
+      <div class="fg"><label><span lang="en">Your name</span><span lang="pt">Seu nome</span></label><input type="text" id="hn" placeholder="Full name"></div>
+      <div class="fg"><label><span lang="en">Phone</span><span lang="pt">Telefone</span></label><input type="tel" id="hp" placeholder="(850) ..."></div>
+      <div class="fg"><label>Email</label><input type="email" id="he" placeholder="your@email.com"></div>
+      <div class="frow">
+        <div class="fg"><label><span lang="en">Preferred date</span><span lang="pt">Data</span></label><input type="date" id="hd"></div>
+        <div class="fg"><label><span lang="en">Time</span><span lang="pt">Horário</span></label>
+          <select id="ht"><option>8:00 AM</option><option>9:00 AM</option><option>10:00 AM</option><option>12:00 PM</option><option>2:00 PM</option><option>4:00 PM</option><option>Flexible</option></select>
+        </div>
+      </div>
+      <button class="btn-sub" onclick="submitHero()"><span lang="en">Request Visit →</span><span lang="pt">Solicitar Visita →</span></button>
+      <p class="qcard-disclaimer">🇧🇷 <span lang="en">Leonardo or Luciana will call you within 24 hours to confirm.</span><span lang="pt">Leonardo ou Luciana ligarão em até 24 horas para confirmar.</span></p>
+    </div>
+  </div>
+  <svg class="hero-warm" viewBox="0 0 1440 80" preserveAspectRatio="none" fill="#fdfaf6"><path d="M0,80 C480,0 960,0 1440,80 L1440,80 L0,80 Z"/></svg>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust"><div class="trust-in">
+  <div class="ti"><div class="ti-leaf"></div><span lang="en">Fully Insured</span><span lang="pt">Totalmente Segurada</span></div>
+  <div class="ti"><div class="ti-leaf"></div><span lang="en">Background-Checked Team</span><span lang="pt">Equipe Verificada</span></div>
+  <div class="ti"><div class="ti-leaf"></div><span lang="en">Eco-Friendly Products</span><span lang="pt">Produtos Eco-Friendly</span></div>
+  <div class="ti"><div class="ti-leaf"></div><span lang="en">Google 5-Star Rated</span><span lang="pt">5 Estrelas no Google</span></div>
+  <div class="ti"><div class="ti-leaf"></div><span lang="en">Free Quote — No Obligation</span><span lang="pt">Orçamento Grátis</span></div>
+  <div class="ti"><div class="ti-leaf"></div><span lang="en">Serving 30A Since 2021</span><span lang="pt">Atendendo 30A desde 2021</span></div>
+</div></div>
+
+<!-- SERVICES -->
+<section class="services-sec" id="services">
+  <div class="sin">
+    <div class="sh">
+      <div class="stag"><span lang="en">What We Do</span><span lang="pt">O que fazemos</span></div>
+      <h2><span lang="en">Six Services, One Standard of Excellence</span><span lang="pt">Seis Serviços, Um Padrão de Excelência</span></h2>
+      <p><span lang="en">Whether it's your home, your Airbnb, or your office, every Brazilian Cleaners service is delivered with the same level of care, precision, and the Brazilian attention to detail our clients love.</span><span lang="pt">Seja sua casa, seu Airbnb ou escritório, cada serviço é entregue com o mesmo nível de cuidado, precisão e o capricho brasileiro que nossos clientes adoram.</span></p>
+    </div>
+    <div class="sgrid">
+
+      <div class="scard">
+        <div class="scard-accent" style="background:var(--blue);"></div>
+        <span class="scard-icon">🏠</span>
+        <h3><span lang="en">Residential Cleaning</span><span lang="pt">Limpeza Residencial</span></h3>
+        <p><span lang="en">Your home is your sanctuary. We treat it that way. Whether you need weekly maintenance or a thorough monthly clean, our team works through every room with care and consistency — so you come home to a space that feels genuinely fresh.</span><span lang="pt">Sua casa é seu santuário. Nós a tratamos assim. Seja manutenção semanal ou limpeza mensal completa, nossa equipe cuida de cada ambiente com atenção e consistência.</span></p>
+        <ul>
+          <li><span lang="en">Kitchen deep-clean including appliances, counters & sink</span><span lang="pt">Limpeza profunda da cozinha</span></li>
+          <li><span lang="en">Bathroom disinfection and scrubbing</span><span lang="pt">Desinfecção completa dos banheiros</span></li>
+          <li><span lang="en">Dusting, vacuuming & mopping all floors</span><span lang="pt">Aspiração, varredura e lavagem dos pisos</span></li>
+          <li><span lang="en">Changing bed linens (optional)</span><span lang="pt">Troca de roupas de cama (opcional)</span></li>
+          <li><span lang="en">Weekly, bi-weekly or monthly schedules</span><span lang="pt">Planos semanais, quinzenais ou mensais</span></li>
+        </ul>
+        <a href="#contact" class="scard-cta"><span lang="en">Get a free quote →</span><span lang="pt">Solicitar orçamento →</span></a>
+      </div>
+
+      <div class="scard">
+        <div class="scard-accent" style="background:var(--gold);"></div>
+        <span class="scard-icon">🌴</span>
+        <h3><span lang="en">Short-Term Rental / Airbnb</span><span lang="pt">Temporada / Airbnb</span></h3>
+        <p><span lang="en">Your guests' first impression is everything — and it starts with how clean the property is. We specialize in fast, reliable turnovers that go beyond just cleaning. We add those hotel-style finishing touches that earn you 5-star reviews every time.</span><span lang="pt">A primeira impressão dos seus hóspedes começa com a limpeza do imóvel. Somos especialistas em viradas rápidas e confiáveis, com toques de hotel que garantem avaliações 5 estrelas.</span></p>
+        <ul>
+          <li><span lang="en">Full property clean between guests</span><span lang="pt">Limpeza completa entre hóspedes</span></li>
+          <li><span lang="en">Hotel-style towel folding & toilet paper sealing</span><span lang="pt">Dobra de toalhas e lacre de papel higiênico estilo hotel</span></li>
+          <li><span lang="en">Linen swap & bed making</span><span lang="pt">Troca de roupa de cama</span></li>
+          <li><span lang="en">Restocking amenities (soap, toilet paper, etc.)</span><span lang="pt">Reposição de amenidades</span></li>
+          <li><span lang="en">Fast turnaround to fit tight guest schedules</span><span lang="pt">Atendimento rápido para encaixes de hóspedes</span></li>
+        </ul>
+        <a href="#contact" class="scard-cta"><span lang="en">Get a free quote →</span><span lang="pt">Solicitar orçamento →</span></a>
+      </div>
+
+      <div class="scard">
+        <div class="scard-accent" style="background:var(--green);"></div>
+        <span class="scard-icon">🧽</span>
+        <h3><span lang="en">Deep Cleaning</span><span lang="pt">Limpeza Geral (Faxina)</span></h3>
+        <p><span lang="en">When a regular clean isn't enough. Our deep cleaning service reaches every corner, crevice, and hidden surface that gets overlooked in daily cleaning — baseboards, behind appliances, inside cabinets, ceiling fans, and more.</span><span lang="pt">Quando a limpeza regular não é suficiente. Nossa faxina alcança cada canto, fresta e superfície escondida — rodapés, atrás de eletros, dentro de armários, ventiladores de teto e muito mais.</span></p>
+        <ul>
+          <li><span lang="en">Inside oven, refrigerator & microwave</span><span lang="pt">Dentro do forno, geladeira e micro-ondas</span></li>
+          <li><span lang="en">Baseboards, light fixtures & ceiling fans</span><span lang="pt">Rodapés, luminárias e ventiladores de teto</span></li>
+          <li><span lang="en">Behind and under all furniture & appliances</span><span lang="pt">Atrás e embaixo de móveis e eletros</span></li>
+          <li><span lang="en">Window tracks, vents & grilles</span><span lang="pt">Trilhos de janelas, grelhas de ventilação</span></li>
+          <li><span lang="en">Ideal for first-time clients, move-ins, or seasonal resets</span><span lang="pt">Ideal para novos clientes, mudanças ou início de temporada</span></li>
+        </ul>
+        <a href="#contact" class="scard-cta"><span lang="en">Get a free quote →</span><span lang="pt">Solicitar orçamento →</span></a>
+      </div>
+
+      <div class="scard">
+        <div class="scard-accent" style="background:var(--terra);"></div>
+        <span class="scard-icon">🏢</span>
+        <h3><span lang="en">Commercial Cleaning</span><span lang="pt">Limpeza Comercial</span></h3>
+        <p><span lang="en">A clean workplace isn't just about appearances — it affects your team's productivity, your clients' confidence, and your brand's reputation. We clean offices, retail spaces, and commercial properties around your schedule, after hours or on weekends.</span><span lang="pt">Um ambiente de trabalho limpo vai além das aparências — afeta a produtividade da equipe, a confiança dos clientes e a reputação da sua marca. Limpamos no seu horário, após o expediente ou nos fins de semana.</span></p>
+        <ul>
+          <li><span lang="en">Office spaces, reception areas & conference rooms</span><span lang="pt">Escritórios, recepções e salas de reunião</span></li>
+          <li><span lang="en">Restrooms deep-clean & restocking</span><span lang="pt">Limpeza profunda e reposição de banheiros</span></li>
+          <li><span lang="en">Kitchen and break room sanitization</span><span lang="pt">Higienização de cozinha e copa</span></li>
+          <li><span lang="en">After-hours, early morning or weekend scheduling</span><span lang="pt">Horários fora do expediente, manhã ou fim de semana</span></li>
+          <li><span lang="en">Custom recurring plans for any business size</span><span lang="pt">Planos recorrentes personalizados para qualquer tamanho</span></li>
+        </ul>
+        <a href="#contact" class="scard-cta"><span lang="en">Get a free quote →</span><span lang="pt">Solicitar orçamento →</span></a>
+      </div>
+
+      <div class="scard">
+        <div class="scard-accent" style="background:var(--bm);"></div>
+        <span class="scard-icon">🚚</span>
+        <h3><span lang="en">Move In / Move Out</span><span lang="pt">Mudança — Entrada e Saída</span></h3>
+        <p><span lang="en">Moving is one of the most stressful life events — don't let cleaning add to the pressure. We leave your old place spotless for the next tenant or owner, and make sure your new space is fresh, sanitized, and ready for you to move in comfortably.</span><span lang="pt">Mudança já é estressante — não deixe a limpeza aumentar a pressão. Deixamos seu imóvel anterior impecável e preparamos o novo para que você entre com conforto e tranquilidade.</span></p>
+        <ul>
+          <li><span lang="en">Full top-to-bottom clean of empty property</span><span lang="pt">Limpeza completa do imóvel vazio</span></li>
+          <li><span lang="en">Inside all cabinets, closets & drawers</span><span lang="pt">Dentro de armários, roupeiros e gavetas</span></li>
+          <li><span lang="en">Appliance cleaning (if remaining)</span><span lang="pt">Limpeza de eletrodomésticos (se presentes)</span></li>
+          <li><span lang="en">Wall spot-cleaning and baseboard detailing</span><span lang="pt">Limpeza de manchas nas paredes e rodapés</span></li>
+          <li><span lang="en">Ideal for tenants, landlords, realtors & buyers</span><span lang="pt">Ideal para inquilinos, proprietários, corretores e compradores</span></li>
+        </ul>
+        <a href="#contact" class="scard-cta"><span lang="en">Get a free quote →</span><span lang="pt">Solicitar orçamento →</span></a>
+      </div>
+
+      <div class="scard">
+        <div class="scard-accent" style="background:var(--green);"></div>
+        <span class="scard-icon">🏙️</span>
+        <h3><span lang="en">Common Area Cleaning</span><span lang="pt">Limpeza de Áreas Comuns</span></h3>
+        <p><span lang="en">Shared spaces set the tone for the entire property. Whether you manage an apartment complex, a condo building, or a vacation community, we keep the common areas clean, welcoming, and professionally maintained on a schedule that works for you.</span><span lang="pt">As áreas comuns definem a primeira impressão do condomínio. Mantemos esses espaços limpos, acolhedores e bem cuidados em um cronograma que funciona para você.</span></p>
+        <ul>
+          <li><span lang="en">Lobbies, hallways & stairwells</span><span lang="pt">Saguões, corredores e escadarias</span></li>
+          <li><span lang="en">Laundry rooms, mail rooms & elevators</span><span lang="pt">Lavanderias, salas de correspondência e elevadores</span></li>
+          <li><span lang="en">Pool areas, gyms & clubhouses</span><span lang="pt">Áreas de piscina, academias e salões de festas</span></li>
+          <li><span lang="en">Recurring weekly or bi-weekly maintenance</span><span lang="pt">Manutenção semanal ou quinzenal recorrente</span></li>
+          <li><span lang="en">Reporting to property managers on completion</span><span lang="pt">Relatório para administradores após cada visita</span></li>
+        </ul>
+        <a href="#contact" class="scard-cta"><span lang="en">Get a free quote →</span><span lang="pt">Solicitar orçamento →</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-sec">
+  <div class="sin">
+    <div class="sh">
+      <div class="why-stag"><span lang="en">Why Choose Us</span><span lang="pt">Por que nos escolher</span></div>
+      <h2><span lang="en">The Brazilian Cleaners Difference</span><span lang="pt">O Diferencial Brazilian Cleaners</span></h2>
+      <p><span lang="en">Hundreds of cleaning companies exist on the Emerald Coast. Here's why homeowners, property managers, and business owners trust Leonardo and Luciana.</span><span lang="pt">Existem centenas de empresas de limpeza na Emerald Coast. Veja por que proprietários e gestores confiam em Leonardo e Luciana.</span></p>
+    </div>
+    <div class="why-grid">
+      <div class="wcard">
+        <span class="wcard-icon">🇧🇷</span>
+        <h4><span lang="en">Brazilian Capricho</span><span lang="pt">Capricho Brasileiro</span></h4>
+        <p><span lang="en">In Brazil, "capricho" means doing something with such care and love that the result is unmistakable. It's not just cleaning — it's pride in every detail, every corner, every visit. Our clients feel the difference immediately.</span><span lang="pt">No Brasil, "capricho" significa fazer algo com tanto cuidado e amor que o resultado é inconfundível. Não é só limpeza — é orgulho em cada detalhe, cada canto, cada visita.</span></p>
+      </div>
+      <div class="wcard">
+        <span class="wcard-icon">🛡️</span>
+        <h4><span lang="en">Insured & Background-Checked</span><span lang="pt">Segurada e Verificada</span></h4>
+        <p><span lang="en">We are fully insured and our team is professionally background-checked. When you open your door to Brazilian Cleaners, you can do so with complete peace of mind — your home and its contents are protected.</span><span lang="pt">Somos totalmente segurados e nossa equipe passa por verificação de antecedentes. Quando você abre a porta para a Brazilian Cleaners, pode fazê-lo com total tranquilidade.</span></p>
+      </div>
+      <div class="wcard">
+        <span class="wcard-icon">⏰</span>
+        <h4><span lang="en">Punctual, Every Single Time</span><span lang="pt">Pontuais, sempre</span></h4>
+        <p><span lang="en">We know your time is valuable — especially for Airbnb hosts managing tight guest check-in windows. We show up when we say we will, finish when we commit to, and never leave you waiting or scrambling.</span><span lang="pt">Sabemos que seu tempo é valioso — especialmente para anfitriões de Airbnb com janelas apertadas de check-in. Chegamos quando dizemos, terminamos no prazo e nunca deixamos você na mão.</span></p>
+      </div>
+      <div class="wcard">
+        <span class="wcard-icon">🌿</span>
+        <h4><span lang="en">Eco-Friendly Products</span><span lang="pt">Produtos Eco-Friendly</span></h4>
+        <p><span lang="en">We use effective, safe cleaning products that are good for your family, your pets, and the environment. No harsh chemical smells, no residue left behind — just a genuinely clean, fresh-smelling space.</span><span lang="pt">Usamos produtos eficazes e seguros — bons para sua família, seus pets e o meio ambiente. Sem cheiro forte de produto químico, sem resíduos — só limpeza genuína e cheiro fresco.</span></p>
+      </div>
+      <div class="wcard">
+        <span class="wcard-icon">💬</span>
+        <h4><span lang="en">Always Responsive</span><span lang="pt">Sempre Presentes</span></h4>
+        <p><span lang="en">We answer calls. We respond to messages. We follow up. Communication is at the core of what makes a service trustworthy, and we take it seriously. If something isn't right, we make it right — always.</span><span lang="pt">Atendemos chamadas. Respondemos mensagens. Fazemos follow-up. Comunicação é o centro da confiança, e levamos isso a sério. Se algo não estiver certo, corrigimos — sempre.</span></p>
+      </div>
+      <div class="wcard">
+        <span class="wcard-icon">📋</span>
+        <h4><span lang="en">Transparent Pricing</span><span lang="pt">Preços Transparentes</span></h4>
+        <p><span lang="en">No hidden fees. No surprises. Before any cleaning, we visit your property in person, assess exactly what's needed, and provide a clear, fair quote. The visit itself is always 100% free — no obligation to book.</span><span lang="pt">Sem taxas ocultas. Sem surpresas. Antes de qualquer limpeza, visitamos seu imóvel pessoalmente, avaliamos o que é necessário e oferecemos um orçamento claro e justo. A visita é sempre 100% gratuita.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-sec" id="about">
+  <div class="sin">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-bg-card">
+          <div class="about-emblem">
+            <div class="about-flag">🇧🇷</div>
+            <div class="about-name">Brazilian Cleaners</div>
+            <div class="about-est">Santa Rosa Beach, FL · Est. 2021</div>
+          </div>
+          <div class="founder-row">
+            <div class="fcard">
+              <div class="fcard-av" style="background:var(--blue);">L</div>
+              <div class="fcard-name">Leonardo</div>
+              <div class="fcard-role"><span lang="en">Co-Founder</span><span lang="pt">Co-Fundador</span></div>
+            </div>
+            <div class="fcard">
+              <div class="fcard-av" style="background:var(--green);">L</div>
+              <div class="fcard-name">Luciana</div>
+              <div class="fcard-role"><span lang="en">Co-Founder</span><span lang="pt">Co-Fundadora</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-copy">
+        <div class="stag-local"><span lang="en">Our Story</span><span lang="pt">Nossa História</span></div>
+        <h2><span lang="en">From Brazil to the Emerald Coast — With Love</span><span lang="pt">Do Brasil à Emerald Coast — Com Amor</span></h2>
+        <p><span lang="en">Brazilian Cleaners was founded in 2021 by Leonardo and Luciana, a Brazilian couple who brought with them something that can't be trained or manufactured: the genuine love of a job done right. In Brazil, there's a word for it — <em>capricho</em>. It means going beyond what's expected, not because you're paid more, but because you take pride in your craft.</span><span lang="pt">A Brazilian Cleaners foi fundada em 2021 por Leonardo e Luciana, um casal brasileiro que trouxe consigo algo que não se treina: o amor genuíno pelo trabalho bem-feito. No Brasil, há uma palavra para isso — <em>capricho</em>. Significa ir além do esperado, não porque se ganha mais, mas porque você se orgulha do que faz.</span></p>
+        <p><span lang="en">What started as a local cleaning service quickly grew into one of the most trusted names on the Emerald Coast. Our clients — homeowners, Airbnb hosts, property managers, and businesses — kept coming back not just because the cleaning was good, but because they trusted us with their most personal spaces. That trust is something we never take for granted.</span><span lang="pt">O que começou como um serviço local de limpeza rapidamente se tornou um dos nomes mais confiáveis da Emerald Coast. Nossos clientes voltam não só porque a limpeza é boa, mas porque confiam a nós seus espaços mais pessoais. Essa confiança nunca é algo que damos como garantido.</span></p>
+        <p><span lang="en">Today, Leonardo and Luciana personally oversee every job — because for us, this is never just a business transaction. It's a relationship, and relationships are built on consistency, honesty, and showing up with the same energy every single time.</span><span lang="pt">Hoje, Leonardo e Luciana supervisionam pessoalmente cada trabalho — porque para nós, isso nunca é apenas uma transação comercial. É um relacionamento, e relacionamentos se constroem com consistência, honestidade e presença constante.</span></p>
+        <div class="diffs">
+          <div class="diff"><div class="diff-ic">🛡️</div><div><h5><span lang="en">Fully Insured</span><span lang="pt">Totalmente Segurada</span></h5><p><span lang="en">Insured and ready to operate with full professionalism.</span><span lang="pt">Segurada e operando com total profissionalismo.</span></p></div></div>
+          <div class="diff"><div class="diff-ic">⏰</div><div><h5><span lang="en">Always On Time</span><span lang="pt">Sempre Pontuais</span></h5><p><span lang="en">Reliability is non-negotiable — we respect your schedule.</span><span lang="pt">Confiabilidade não é negociável — respeitamos seu horário.</span></p></div></div>
+          <div class="diff"><div class="diff-ic">✅</div><div><h5><span lang="en">Verified Team</span><span lang="pt">Equipe Verificada</span></h5><p><span lang="en">Background-checked and professionally trained staff.</span><span lang="pt">Equipe com antecedentes verificados e treinamento profissional.</span></p></div></div>
+          <div class="diff"><div class="diff-ic">🌿</div><div><h5><span lang="en">Eco Products</span><span lang="pt">Eco-Amigável</span></h5><p><span lang="en">Safe for your family, your pets, and the planet.</span><span lang="pt">Seguro para sua família, seus pets e o planeta.</span></p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-sec" id="process">
+  <div class="sin">
+    <div class="sh">
+      <div class="stag"><span lang="en">How It Works</span><span lang="pt">Como Funciona</span></div>
+      <h2><span lang="en">Simple, Transparent, No Surprises</span><span lang="pt">Simples, Transparente, Sem Surpresas</span></h2>
+      <p><span lang="en">From your first contact to a spotless space — here's exactly what you can expect when you work with Brazilian Cleaners.</span><span lang="pt">Do primeiro contato a um espaço impecável — veja exatamente o que esperar ao trabalhar com a Brazilian Cleaners.</span></p>
+    </div>
+    <div class="process-steps">
+      <div class="pstep">
+        <div class="pstep-num">1</div>
+        <h4><span lang="en">You Reach Out</span><span lang="pt">Você Nos Contata</span></h4>
+        <p><span lang="en">Fill out our short contact form or call us directly at (850) 822-0727. Tell us what you need — we'll respond within 24 hours.</span><span lang="pt">Preencha nosso formulário ou ligue diretamente. Responderemos em até 24 horas.</span></p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">2</div>
+        <h4><span lang="en">We Visit — Free</span><span lang="pt">Visitamos — Grátis</span></h4>
+        <p><span lang="en">Leonardo or Luciana visits your property in person, assesses the space, understands your needs, and answers any questions. This visit is completely free of charge.</span><span lang="pt">Leonardo ou Luciana visita seu imóvel pessoalmente, avalia o espaço e entende suas necessidades. Esta visita é completamente gratuita.</span></p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">3</div>
+        <h4><span lang="en">You Get a Clear Quote</span><span lang="pt">Você Recebe o Orçamento</span></h4>
+        <p><span lang="en">We provide a fair, transparent price — no hidden fees, no vague estimates. You know exactly what you're paying and what you're getting. No pressure to commit.</span><span lang="pt">Oferecemos um preço justo e transparente — sem taxas ocultas. Você sabe exatamente o que está pagando. Sem pressão para contratar.</span></p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">4</div>
+        <h4><span lang="en">We Clean. You Relax.</span><span lang="pt">Limpamos. Você Relaxa.</span></h4>
+        <p><span lang="en">On the agreed date, we arrive on time and get to work. You come home (or welcome guests) to a space that feels genuinely clean — the Brazilian way.</span><span lang="pt">Na data combinada, chegamos no horário e trabalhamos. Você volta para um espaço genuinamente limpo — do jeito brasileiro.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA -->
+<div class="area-bar">
+  <div class="area-in">
+    <div class="area-txt">
+      <h3>📍 <span lang="en">Areas We Serve</span><span lang="pt">Onde Atendemos</span></h3>
+      <p><span lang="en">Proudly serving Santa Rosa Beach and the full 30A Corridor.</span><span lang="pt">Atendemos Santa Rosa Beach e todo o corredor 30A.</span></p>
+    </div>
+    <div class="atags">
+      <span class="atag">Santa Rosa Beach</span>
+      <span class="atag">Seaside</span>
+      <span class="atag">Grayton Beach</span>
+      <span class="atag">Blue Mountain Beach</span>
+      <span class="atag">Watercolor</span>
+      <span class="atag">Seagrove Beach</span>
+      <span class="atag">Alys Beach</span>
+      <span class="atag">Inlet Beach</span>
+      <span class="atag">Rosemary Beach</span>
+      <span class="atag">30A Corridor</span>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section class="reviews-sec" id="reviews">
+  <div class="sin">
+    <div class="sh">
+      <div class="stag"><span lang="en">Client Reviews</span><span lang="pt">Avaliações de Clientes</span></div>
+      <h2><span lang="en">What Our Clients Say</span><span lang="pt">O que Nossos Clientes Dizem</span></h2>
+      <p><span lang="en">Don't take our word for it. Here's what real clients — homeowners, Airbnb hosts, realtors, and property managers — say about working with Leonardo and Luciana.</span><span lang="pt">Veja o que clientes reais — proprietários, anfitriões, corretores e gestores — dizem sobre trabalhar com Leonardo e Luciana.</span></p>
+    </div>
+    <div class="rcarousel"><div class="rtrack" id="rtrack">
+      <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-txt">"If I could give Brazilian Cleaners 10 stars, I absolutely would! I own a short-term rental that I've personally managed for 15 years — Leonardo and Luciana are the most 'attention to detail' cleaning crew I have ever had. They are professional, accommodating, and communicative. They are the Real Deal!"</p><div class="rcard-name">Desiree Levine</div><div class="rcard-loc">Short-Term Rental Owner · Watercolor, FL</div></div>
+      <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-txt">"Luciana and Leonardo are absolutely amazing! Every time they clean our townhome they go above and beyond. Not only is our home spotless, but they add hotel-style touches — beautifully folded towels, sealed toilet paper. If you're looking for reliable, detailed, and caring house cleaners in the 30A area, they are the best of the best!"</p><div class="rcard-name">Raquel Salinas</div><div class="rcard-loc">Homeowner · Santa Rosa Beach, FL</div></div>
+      <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-txt">"I have been in the property management industry for over 25 years and have used several cleaning companies — none of them does the job as well as Brazilian Cleaners. Thank you Leonardo and Luciana!"</p><div class="rcard-name">Sandy McKee</div><div class="rcard-loc">Property Manager · Santa Rosa Beach, FL</div></div>
+      <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-txt">"These guys are the best cleaners we've ever used. They are trustworthy, go above and beyond and are so sweet and kind. We consistently get comments from our guests regarding how clean our vacation home is!"</p><div class="rcard-name">Teal Edmeade</div><div class="rcard-loc">Vacation Rental Owner · 30A</div></div>
+      <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-txt">"Super friendly, efficient professional cleaners. They do such a thorough job and are very speedy! My house smells so clean after they leave. I have hired them a few times and plan on hiring them again!"</p><div class="rcard-name">Zoe Oleshansky</div><div class="rcard-loc">Homeowner · Santa Rosa Beach, FL</div></div>
+      <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-txt">"As a realtor who frequently prepares homes for sale, I was thoroughly impressed. Professional, efficient, and friendly — they left no spot untouched, even tackling neglected areas like baseboards and light fixtures. Top-notch service!"</p><div class="rcard-name">Mwewa Liswaniso</div><div class="rcard-loc">Realtor · Santa Rosa Beach, FL</div></div>
+      <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-txt">"Easy to schedule, very professional and did an amazing job on our apartment. I would highly recommend them if you need any cleaning or deep cleaning — they will get the job done."</p><div class="rcard-name">Daniel Johnson</div><div class="rcard-loc">Client · 30A Corridor</div></div>
+      <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-txt">"We have been using Brazilian Cleaners for deep cleaning and have been very happy with their work. Reliable, thorough and pleasant. We definitely plan on hiring them again!"</p><div class="rcard-name">Rochele Tenenboim</div><div class="rcard-loc">Client · Santa Rosa Beach, FL</div></div>
+      <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-txt">"Amazing cleaning job — top performance!! Highly recommended!!"</p><div class="rcard-name">Anne Clark</div><div class="rcard-loc">Client · Santa Rosa Beach, FL</div></div>
+    </div></div>
+    <div class="rcontrols">
+      <button class="rbtn" onclick="moveC(-1)">←</button>
+      <div class="rdots" id="rdots"></div>
+      <button class="rbtn" onclick="moveC(1)">→</button>
+    </div>
+    <div class="g-badge">
+      <div class="g-logo"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
+      <div class="g-right">
+        <div class="gs">★★★★★</div>
+        <div style="display:flex;align-items:baseline;gap:6px;"><div class="gn">5.0</div><div class="gl"><span lang="en">Google Reviews</span><span lang="pt">Avaliações Google</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="sin">
+    <div class="cgrid">
+      <div class="cinfo">
+        <div class="cinfo-tag"><span lang="en">Schedule a Visit</span><span lang="pt">Agendar Visita</span></div>
+        <h2><span lang="en">Let's Talk About Your Space</span><span lang="pt">Vamos Falar sobre seu Espaço</span></h2>
+        <p><span lang="en">Every property is different — and every quote reflects that. We never give prices over the phone without seeing the space first. Instead, we schedule a short, free visit so we can understand your needs, answer your questions, and give you a price that's fair and honest.</span><span lang="pt">Cada imóvel é diferente — e cada orçamento reflete isso. Nunca damos preços pelo telefone sem ver o espaço primeiro. Em vez disso, agendamos uma visita breve e gratuita para entender suas necessidades, responder suas dúvidas e oferecer um preço justo e honesto.</span></p>
+        <div class="free-box">
+          <div style="font-size:22px;flex-shrink:0;">✅</div>
+          <p><span lang="en">The quote visit is <strong>completely free</strong> and carries zero obligation. No pressure, no contracts, no awkward sales pitches — just an honest conversation about how we can help.</span><span lang="pt">A visita de orçamento é <strong>completamente gratuita</strong> e sem nenhuma obrigação. Sem pressão, sem contratos, sem vendas forçadas — apenas uma conversa honesta sobre como podemos ajudar.</span></p>
+        </div>
+        <div class="cways">
+          <a href="tel:+18508220727" class="cway">
+            <div class="cway-ic b">📞</div>
+            <div><div class="cway-lbl"><span lang="en">Call or Text</span><span lang="pt">Ligue</span></div><div class="cway-val">+1 (850) 822-0727</div></div>
+          </a>
+          <a href="https://www.instagram.com/braziliancleaners850/" class="cway" target="_blank">
+            <div class="cway-ic r">📸</div>
+            <div><div class="cway-lbl">Instagram</div><div class="cway-val">@braziliancleaners850</div></div>
+          </a>
+          <a href="https://www.facebook.com/Brazilian.Cleaners.850/" class="cway" target="_blank">
+            <div class="cway-ic b">👍</div>
+            <div><div class="cway-lbl">Facebook</div><div class="cway-val">Brazilian Cleaners 850</div></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Form -->
+      <div class="cform" id="cformWrap">
+        <h3><span lang="en">Schedule Your Free Visit</span><span lang="pt">Agendar Visita Grátis</span></h3>
+        <p class="cform-sub"><span lang="en">Fill out the form below and Leonardo or Luciana will call you within 24 hours to confirm the visit date and time.</span><span lang="pt">Preencha o formulário e Leonardo ou Luciana ligarão em até 24 horas para confirmar a data e horário da visita.</span></p>
+
+        <div id="formFields">
+          <div class="frow">
+            <div class="fg"><label><span lang="en">First & last name</span><span lang="pt">Nome completo</span></label><input type="text" id="cName" placeholder="Jane Smith" required></div>
+            <div class="fg"><label><span lang="en">Phone number</span><span lang="pt">Telefone</span></label><input type="tel" id="cPhone" placeholder="(850) 555-0100" required></div>
+          </div>
+          <div class="fg"><label>Email</label><input type="email" id="cEmail" placeholder="jane@example.com" required></div>
+          <div class="fg"><label><span lang="en">Property address or area</span><span lang="pt">Endereço ou bairro do imóvel</span></label><input type="text" id="cAddr" placeholder="e.g. 42 Beach Rd, Watercolor FL — or just 'Seagrove Beach'" required></div>
+          <div class="frow">
+            <div class="fg">
+              <label><span lang="en">Property type</span><span lang="pt">Tipo de imóvel</span></label>
+              <select id="cType">
+                <option value="">Select…</option>
+                <option>Single Family Home</option>
+                <option>Condo / Townhouse</option>
+                <option>Vacation Rental / Airbnb</option>
+                <option>Commercial Office</option>
+                <option>Apartment Complex</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label><span lang="en">Service interested in</span><span lang="pt">Serviço de interesse</span></label>
+              <select id="cService">
+                <option value="">Select…</option>
+                <option>Residential Regular Cleaning</option>
+                <option>Deep Cleaning / Faxina</option>
+                <option>Commercial Cleaning</option>
+                <option>Short-Term Rental / Airbnb Turnover</option>
+                <option>Move In / Move Out</option>
+                <option>Common Area Cleaning</option>
+              </select>
+            </div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label><span lang="en">Preferred visit date</span><span lang="pt">Data preferida</span></label><input type="date" id="cDate"></div>
+            <div class="fg"><label><span lang="en">Preferred time</span><span lang="pt">Horário preferido</span></label>
+              <select id="cTime">
+                <option>8:00 AM</option><option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
+                <option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option>
+                <option>4:00 PM</option><option>Flexible</option>
+              </select>
+            </div>
+          </div>
+          <div class="fg"><label><span lang="en">Notes / special requests (optional)</span><span lang="pt">Observações (opcional)</span></label><textarea id="cNotes" placeholder="Number of bedrooms and bathrooms, pets, specific concerns, how you found us…"></textarea></div>
+          <button class="btn-sub" onclick="submitMain()">
+            <span lang="en">Request Free Visit →</span><span lang="pt">Solicitar Visita Gratuita →</span>
+          </button>
+          <p class="qcard-disclaimer" style="margin-top:.85rem;">🇧🇷 <span lang="en">We'll call you within 24 hours. No spam, no obligation.</span><span lang="pt">Ligaremos em até 24 horas. Sem spam, sem compromisso.</span></p>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">🎉</div>
+          <h3><span lang="en">Visit Requested!</span><span lang="pt">Visita Solicitada!</span></h3>
+          <p><span lang="en">Thank you! <strong>Leonardo or Luciana will call you within 24 hours</strong> to confirm your free visit date and time. We're looking forward to meeting you and seeing your space!</span><span lang="pt">Obrigado! <strong>Leonardo ou Luciana ligarão em até 24 horas</strong> para confirmar a data e horário da sua visita gratuita. Mal podemos esperar para conhecer você e ver seu espaço!</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-in">
+    <div>
+      <div class="fb-name">Brazilian Cleaners</div>
+      <div class="fb-sub">Santa Rosa Beach, FL · Est. 2021</div>
+      <p class="fb-desc"><span lang="en">Professional cleaning with warmth and Brazilian pride. Leonardo & Luciana serving the Emerald Coast since 2021 — one spotless home at a time.</span><span lang="pt">Limpeza profissional com calor e orgulho brasileiro. Leonardo & Luciana atendendo a Emerald Coast desde 2021 — uma casa impecável de cada vez.</span></p>
+      <div class="fsocial">
+        <a href="https://www.instagram.com/braziliancleaners850/" class="fsb" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/Brazilian.Cleaners.850/" class="fsb" target="_blank">Facebook</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4><span lang="en">Services</span><span lang="pt">Serviços</span></h4>
+      <a href="#services"><span lang="en">Residential Cleaning</span><span lang="pt">Limpeza Residencial</span></a>
+      <a href="#services"><span lang="en">Deep Cleaning</span><span lang="pt">Limpeza Geral</span></a>
+      <a href="#services"><span lang="en">Airbnb / Short-Term</span><span lang="pt">Airbnb / Temporada</span></a>
+      <a href="#services"><span lang="en">Commercial</span><span lang="pt">Comercial</span></a>
+      <a href="#services"><span lang="en">Move In / Move Out</span><span lang="pt">Mudança</span></a>
+      <a href="#services"><span lang="en">Common Areas</span><span lang="pt">Áreas Comuns</span></a>
+    </div>
+    <div class="fcol">
+      <h4><span lang="en">Company</span><span lang="pt">Empresa</span></h4>
+      <a href="#about"><span lang="en">About Us</span><span lang="pt">Sobre Nós</span></a>
+      <a href="#process"><span lang="en">How It Works</span><span lang="pt">Como Funciona</span></a>
+      <a href="#reviews"><span lang="en">Reviews</span><span lang="pt">Avaliações</span></a>
+      <a href="#contact"><span lang="en">Free Quote Visit</span><span lang="pt">Visita Grátis</span></a>
+    </div>
+    <div class="fcol">
+      <h4><span lang="en">Contact</span><span lang="pt">Contato</span></h4>
+      <a href="tel:+18508220727">📞 (850) 822-0727</a>
+      <a href="https://www.instagram.com/braziliancleaners850/" target="_blank">📸 @braziliancleaners850</a>
+      <p>📍 Santa Rosa Beach, FL 32459</p>
+      <p><span lang="en">Serving the entire 30A Corridor</span><span lang="pt">Atendendo todo o corredor 30A</span></p>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span>© 2025 Brazilian Cleaners LLC. All rights reserved.</span>
+    <span>🇧🇷 🤝 🇺🇸</span>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✅ <span lang="en">Request saved! We'll call you within 24 hours.</span><span lang="pt">Solicitação salva! Ligaremos em até 24 horas.</span></div>
+
+<script>
+// ── LANGUAGE ──
+function setLang(l, btn) {
+  document.body.classList.toggle('lpt', l === 'pt');
+  document.querySelectorAll('.lb').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+}
+
+// ── TOAST ──
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4500);
+}
+
+// ══════════════════════════════════════════════════════
+// GOOGLE SHEETS INTEGRATION
+// 1. Siga o guia de configuração (Apps Script)
+// 2. Substitua a URL abaixo pela URL do seu Web App
+// ══════════════════════════════════════════════════════
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxrFrKagfgJhoqZie7R2Tvxxfc4y_Qx6wMZfN64rWGUnLSEEVfaT3EOZi9gmyauYX_g/exec';
+
+async function sendToSheet(data) {
+  if (!SHEET_URL || SHEET_URL === 'https://script.google.com/macros/s/AKfycbxrFrKagfgJhoqZie7R2Tvxxfc4y_Qx6wMZfN64rWGUnLSEEVfaT3EOZi9gmyauYX_g/exec') {
+    console.warn('Google Sheets URL not configured. Data:', data);
+    return;
+  }
+  try {
+    await fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+  } catch(e) {
+    console.error('Failed to send to Google Sheets:', e);
+  }
+}
+
+// ── HERO FORM ──
+function submitHero() {
+  const name    = document.getElementById('hn').value.trim();
+  const phone   = document.getElementById('hp').value.trim();
+  const email   = document.getElementById('he').value.trim();
+  const service = document.getElementById('hs').value;
+  const date    = document.getElementById('hd').value;
+  const time    = document.getElementById('ht').value;
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+  sendToSheet({ source: 'Hero Form', name, phone, email, service,
+    preferredDate: date, preferredTime: time, notes: '' });
+  showToast();
+  ['hn','hp','he','hd'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('hs').selectedIndex = 0;
+}
+
+// ── MAIN FORM ──
+function submitMain() {
+  const name    = document.getElementById('cName').value.trim();
+  const phone   = document.getElementById('cPhone').value.trim();
+  const email   = document.getElementById('cEmail').value.trim();
+  const addr    = document.getElementById('cAddr').value.trim();
+  const type    = document.getElementById('cType').value;
+  const service = document.getElementById('cService').value;
+  const date    = document.getElementById('cDate').value;
+  const time    = document.getElementById('cTime').value;
+  const notes   = document.getElementById('cNotes').value.trim();
+  if (!name || !phone || !email) { alert('Please fill in your name, phone, and email.'); return; }
+  sendToSheet({ source: 'Contact Form', name, phone, email,
+    address: addr, propertyType: type, service,
+    preferredDate: date, preferredTime: time, notes });
+  document.getElementById('formFields').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+  showToast();
+}
+
+// ── CAROUSEL ──
+let cur = 0;
+const track = document.getElementById('rtrack');
+const cards = [...track.querySelectorAll('.rcard')];
+const dotsEl = document.getElementById('rdots');
+const pv = () => window.innerWidth < 700 ? 1 : window.innerWidth < 1050 ? 2 : 3;
+let pages = 0;
+
+function buildDots() {
+  pages = Math.ceil(cards.length / pv());
+  dotsEl.innerHTML = '';
+  for (let i = 0; i < pages; i++) {
+    const d = document.createElement('div');
+    d.className = 'rdot' + (i === cur ? ' on' : '');
+    d.onclick = () => goTo(i);
+    dotsEl.appendChild(d);
+  }
+}
+
+function goTo(i) {
+  cur = Math.max(0, Math.min(i, pages - 1));
+  const p = pv(), w = track.parentElement.offsetWidth, g = 20;
+  const cw = (w - g * (p - 1)) / p;
+  track.style.transform = `translateX(-${cur * (cw + g)}px)`;
+  dotsEl.querySelectorAll('.rdot').forEach((d, j) => d.classList.toggle('on', j === cur));
+}
+
+function moveC(d) { goTo(cur + d); }
+
+buildDots();
+window.addEventListener('resize', () => { buildDots(); goTo(0); });
+setInterval(() => goTo(cur + 1 < pages ? cur + 1 : 0), 6500);
+
+// ── SMOOTH SCROLL ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+</script>
+</body>
+</html>
